@@ -3,37 +3,63 @@
 import Link from "next/link"
 
 export default function Sidebar() {
+
   return (
-    <aside className="w-64 bg-white border-r min-h-screen p-6">
+    <aside className="w-50 border-r min-h-screen p-4 bg-background">
 
-      <h1 className="text-2xl font-bold text-zinc-800 mb-10">
-        Trade SaaS
-      </h1>
+      {/* LOGO */}
+      <div className="mb-8">
 
-      <nav className="space-y-3">
+        <h1 className="text-2xl font-bold">
+          NataTrader
+        </h1>
+
+        <p className="text-sm text-muted-foreground">
+          Trading Analytics
+        </p>
+
+      </div>
+
+      {/* MENU */}
+      <nav className="space-y-2">
 
         <Link
-          href="/dashboard"
-          className="block p-3 rounded-xl hover:bg-zinc-100 text-zinc-700"
+          href="/dashboard-v2"
+          className="block rounded-lg px-3 py-2 hover:bg-muted transition"
         >
           Dashboard
         </Link>
 
         <Link
-          href="/dashboard/trades/new"
-          className="block p-3 rounded-xl hover:bg-zinc-100 text-zinc-700"
+          href="/journal"
+          className="block rounded-lg px-3 py-2 hover:bg-muted transition"
         >
-          Novo Trade
+          Journal
         </Link>
 
         <Link
-          href="/dashboard/import"
-          className="block p-3 rounded-xl hover:bg-zinc-100 text-zinc-700"
+          href="/analytics"
+          className="block rounded-lg px-3 py-2 hover:bg-muted transition"
         >
-          Importar CSV
+          Analytics
+        </Link>
+
+        <Link
+          href="/playbook"
+          className="block rounded-lg px-3 py-2 hover:bg-muted transition"
+        >
+          Playbook
+        </Link>
+
+        <Link
+          href="/settings"
+          className="block rounded-lg px-3 py-2 hover:bg-muted transition"
+        >
+          Settings
         </Link>
 
       </nav>
+
     </aside>
   )
 }
